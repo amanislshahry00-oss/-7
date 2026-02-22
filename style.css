@@ -85,4 +85,18 @@ footer {
   padding: 15px;
   font-size: 0.9rem;
   color: #aaa;
+
+  .back-links a {
+  display: block;      /* هذا يجعل كل زر يظهر في سطر جديد */
+  margin: 10px 0;      /* مسافة بين كل زر */
+  font-weight: bold;
+  color: #ffca28;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffca28;
+}
 }
