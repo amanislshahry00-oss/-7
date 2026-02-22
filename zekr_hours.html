@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ساعات الذكر 🌙</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
   body {
     font-family: 'Cairo', sans-serif;
@@ -22,11 +22,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .card {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.06);
+    padding: 30px 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 50px rgba(255,0,204,0.3);
+  }
+
   table {
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
     border-collapse: collapse;
+    margin-bottom: 30px;
   }
   th, td {
     border: 1px solid #444;
@@ -36,109 +46,78 @@
   th {
     background: #330033;
   }
-  td button {
+
+  a.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
     background: linear-gradient(90deg, #ff00cc, #3333ff);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 30px;
     color: white;
-    cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 0 15px rgba(255, 0, 204, 0.6);
+    box-shadow: 0 0 15px rgba(255,0,204,0.6);
     transition: 0.3s;
+    text-align: center;
   }
-  td button:hover {
-    box-shadow: 0 0 25px rgba(0, 245, 255, 0.9);
+  a.btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,245,255,0.9);
   }
-  #display {
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.06);
-    padding: 25px 30px;
-    border-radius: 25px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 40px rgba(255, 0, 204, 0.3);
-    min-height: 120px;
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: #ddd;
-    user-select: text;
+
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffca28;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .back-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffca28;
   }
 </style>
 </head>
 <body>
 
-<h1>🕰️ ساعات الذكر</h1>
+<div class="card">
+  <h1>🕰️ ساعات الذكر</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>الساعة</th>
-      <th>عرض الأذكار</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>5 - 6 صباحًا</td>
-      <td><a href="morning.html" class="btn">أذكار الصباح</a></td>
-    </tr>
-    <tr>
-      <td>6 - 7 مساءً</td>
-      <td><a href="evening.html" class="btn">أذكار المساء</a></td>
-    </tr>
-    <tr>
-      <td>9 - 10 مساءً</td>
-      <td><a href="sleep.html" class="btn">أذكار النوم</a></td>
-    </tr>
-    <tr>
-      <td>أثناء السفر</td>
-      <td><a href="travel.html" class="btn">أذكار السفر</a></td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>الساعة</th>
+        <th>عرض الأذكار</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5 - 6 صباحًا</td>
+        <td><a href="morning.html" class="btn">أذكار الصباح</a></td>
+      </tr>
+      <tr>
+        <td>6 - 7 مساءً</td>
+        <td><a href="evening.html" class="btn">أذكار المساء</a></td>
+      </tr>
+      <tr>
+        <td>9 - 10 مساءً</td>
+        <td><a href="sleep.html" class="btn">أذكار النوم</a></td>
+      </tr>
+      <tr>
+        <td>ادعيه نبويه</td>
+        <td><a href="dua nabawy.html" class="btn">ادعيه نبويه</a></td>
+      </tr>
+    </tbody>
+  </table>
 
-
-
-<script>
-  const zikrTexts = {
-    "صباح": `
-      <h2>أذكار الصباح</h2>
-      <p>اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت...</p>
-      <p>سبحان الله وبحمده سبحان الله العظيم...</p>
-      <p>اللهم إني أسألك خير هذا اليوم وخيره ما بعده...</p>
-    `,
-    "مساء": `
-      <h2>أذكار المساء</h2>
-      <p>أعوذ بالله من الشيطان الرجيم...</p>
-      <p>اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت...</p>
-      <p>رضيت بالله ربا وبالإسلام دينا وبمحمد صلى الله عليه وسلم نبياً...</p>
-    `,
-    "نوم": `
-      <h2>أذكار النوم</h2>
-      <p>باسمك اللهم أحيا وأموت...</p>
-      <p>اللهم قني عذابك يوم تبعث عبادك...</p>
-    `,
-    "ادعيه نبويه": `
-      <h2>ادعيه نبوية</h2>
-      <p>اللهم إني أعوذ بك من وعثاء السفر وكآبة المنظر وسوء المنقلب...</p>
-      <p>اللهم اجعل سفرنا هذا سفرًا مباركًا...</p>
-    `
-  };
-
-  const buttons = document.querySelectorAll("button[data-zekr]");
-  const display = document.getElementById("display");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const key = btn.getAttribute("data-zekr");
-      display.innerHTML = zikrTexts[key];
-      display.scrollIntoView({behavior: "smooth"});
-    });
-  });
-</script>
+  <a href="index.html" class="back-link">⬅ العودة للرئيسية</a>
+</div>
 
 </body>
 </html>
+
+</body>
+</html>
+
 
 
