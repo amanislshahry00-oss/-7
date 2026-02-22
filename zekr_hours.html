@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ساعات الذكر 🌙</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: radial-gradient(circle at top left, #1a1a2e, #0f0f1b 70%);
+    color: #fff;
+    margin: 20px;
+    direction: rtl;
+    text-align: right;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.8rem;
+    background: linear-gradient(90deg, #00f5ff, #ff00cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #444;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+  th {
+    background: #330033;
+  }
+  td button {
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(255, 0, 204, 0.6);
+    transition: 0.3s;
+  }
+  td button:hover {
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.9);
+    transform: scale(1.05);
+  }
+  #display {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.06);
+    padding: 25px 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(255, 0, 204, 0.3);
+    min-height: 120px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #ddd;
+    user-select: text;
+  }
+</style>
+</head>
+<body>
+
+<h1>🕰️ ساعات الذكر</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>الساعة</th>
+      <th>عرض الأذكار</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5 - 6 صباحًا</td>
+      <td><button data-zekr="صباح">أذكار الصباح</button></td>
+    </tr>
+    <tr>
+      <td>6 - 7 مساءً</td>
+      <td><button data-zekr="مساء">أذكار المساء</button></td>
+    </tr>
+    <tr>
+      <td>9 - 10 مساءً</td>
+      <td><button data-zekr="نوم">أذكار النوم</button></td>
+    </tr>
+    <tr>
+      <td>خلال اليوم</td>
+      <td><button data-zekr="اليوم">خلال اليوم</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="display">اضغط على زر الأذكار لعرض النص هنا.</div>
+
+<script>
+  const zikrTexts = {
+    "صباح": `
+      <h2>أذكار الصباح</h2>
+      <p>اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت...</p>
+      <p>سبحان الله وبحمده سبحان الله العظيم...</p>
+      <p>اللهم إني أسألك خير هذا اليوم وخيره ما بعده...</p>
+    `,
+    "مساء": `
+      <h2>أذكار المساء</h2>
+      <p>أعوذ بالله من الشيطان الرجيم...</p>
+      <p>اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت...</p>
+      <p>رضيت بالله ربا وبالإسلام دينا وبمحمد صلى الله عليه وسلم نبياً...</p>
+    `,
+    "نوم": `
+      <h2>أذكار النوم</h2>
+      <p>باسمك اللهم أحيا وأموت...</p>
+      <p>اللهم قني عذابك يوم تبعث عبادك...</p>
+    `,
+    "ادعيه نبويه": `
+      <h2>ادعيه نبوية</h2>
+      <p>اللهم إني أعوذ بك من وعثاء السفر وكآبة المنظر وسوء المنقلب...</p>
+      <p>اللهم اجعل سفرنا هذا سفرًا مباركًا...</p>
+    `
+  };
+
+  const buttons = document.querySelectorAll("button[data-zekr]");
+  const display = document.getElementById("display");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.getAttribute("data-zekr");
+      display.innerHTML = zikrTexts[key];
+      display.scrollIntoView({behavior: "smooth"});
+    });
+  });
+</script>
+
+</body>
+</html>
