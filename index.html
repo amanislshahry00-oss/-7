@@ -155,7 +155,7 @@ footer{
 </footer>
 
 <script>
-// ========== Glow يتحرك مع الماوس ==========
+
 const glow = document.getElementById('glow');
 document.addEventListener('mousemove', e=>{
   let x = e.clientX - 300; // نصف حجم glow
@@ -164,7 +164,7 @@ document.addEventListener('mousemove', e=>{
   glow.style.top = y + "px";
 });
 
-// ========== Fade-in Card عند دخول الشاشة ==========
+
 const card = document.getElementById('mainCard');
 window.addEventListener('load', ()=>{
   setTimeout(()=>{
@@ -187,6 +187,7 @@ buttons.forEach(btn=>{
 
 </body>
 </html>
+
 
 
 
